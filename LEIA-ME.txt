@@ -1,0 +1,17 @@
+APRESENTAÇÃO HTML — LEMA / UFPB
+
+1. Abra o arquivo portfolio_lema_governos.html no Chrome, Edge ou Safari.
+2. Mantenha a pasta assets no mesmo diretório do arquivo HTML.
+3. Para substituir o logo, troque o arquivo assets/logo-lema.png por outro PNG,
+   preferencialmente circular e com fundo transparente, preservando o nome.
+4. A imagem da capa está em assets/hero-governos.jpg.
+
+CONTROLES
+Seta direita ou espaço: avançar
+Seta esquerda: retornar
+F: tela cheia
+M: menu
+O: visão geral
+?: ajuda
+
+A apresentação funciona sem internet.
