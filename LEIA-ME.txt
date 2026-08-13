@@ -5,6 +5,8 @@ APRESENTAÇÃO HTML — LEMA / UFPB
 3. Para substituir o logo, troque o arquivo assets/logo-lema.png por outro PNG,
    preferencialmente circular e com fundo transparente, preservando o nome.
 4. A imagem da capa está em assets/hero-governos.jpg.
+5. As imagens das seções de preços e portfólio estão, respectivamente, em
+   assets/inteligencia-precos.jpg e assets/ecossistema-plataformas.jpg.
 
 CONTROLES
 Seta direita ou espaço: avançar
@@ -14,4 +16,5 @@ M: menu
 O: visão geral
 ?: ajuda
 
-A apresentação funciona sem internet.
+A apresentação e seus recursos visuais funcionam sem internet. Os botões
+“Explorar” abrem plataformas externas e, portanto, exigem conexão.

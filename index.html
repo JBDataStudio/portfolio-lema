@@ -93,8 +93,16 @@
     .pin{position:absolute;width:18px;height:18px;border-radius:50%;background:var(--gold);border:4px solid var(--white);box-shadow:0 0 0 9px rgba(217,171,75,.18);animation:pulse 2.4s ease-in-out infinite}
     .pin:nth-child(2){left:31%;top:28%;background:var(--teal);animation-delay:.5s}.pin:nth-child(3){left:66%;top:56%;animation-delay:1s}.pin:nth-child(4){left:78%;top:26%;background:#fff;animation-delay:1.4s}
     @keyframes pulse{50%{transform:scale(1.18);box-shadow:0 0 0 16px rgba(217,171,75,0)}}
-    .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.case{padding:22px;border-top:3px solid var(--teal);background:var(--cloud);min-height:150px}
-    .case b{display:block;font-size:15px;color:var(--petrol);margin-bottom:10px}.case span{font-size:13px;line-height:1.45;color:var(--muted)}
+    .price-card{padding:0;overflow:hidden}.price-visual{position:relative;height:clamp(126px,17vh,178px);background:url("assets/inteligencia-precos.jpg") center 54%/cover no-repeat}
+    .price-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,27,43,.72),transparent 70%)}
+    .price-stats{position:absolute;z-index:1;left:22px;right:22px;bottom:16px;display:flex;gap:10px}.price-stat{padding:8px 12px;border:1px solid rgba(255,255,255,.18);border-radius:12px;background:rgba(7,27,43,.76);backdrop-filter:blur(8px);color:white;font-size:10px;line-height:1.15}
+    .price-stat b{display:block;color:var(--gold);font-size:18px;letter-spacing:-.03em}.price-body{padding:20px 26px 24px}.price-body .list{gap:10px}.price-body .list li{font-size:clamp(12px,1.12vw,17px)}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.project-link{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:9px 13px;border-radius:999px;background:var(--petrol);color:white;text-decoration:none;font-size:11px;font-weight:850;letter-spacing:.03em;transition:.22s var(--ease)}
+    .project-link:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(11,90,103,.22);background:var(--navy)}.project-link.light{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22)}.project-link.light:hover{background:var(--teal)}.project-link.disabled{background:#e5eaeb;color:#84949b;cursor:default;box-shadow:none;transform:none}
+    .portfolio-slide h2,.evidence-slide h2{font-size:clamp(28px,3.55vw,52px);margin-bottom:22px}.portfolio-layout{display:grid;grid-template-columns:.83fr 1.17fr;gap:24px;align-items:stretch}.portfolio-visual{position:relative;margin:0;min-height:410px;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow)}
+    .portfolio-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.portfolio-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,27,43,.95),rgba(7,27,43,.03) 68%)}.portfolio-visual figcaption{position:absolute;z-index:1;left:24px;right:24px;bottom:23px}.portfolio-visual strong{display:block;color:var(--gold);font-size:clamp(24px,2.65vw,39px);letter-spacing:-.04em}.portfolio-visual span{display:block;color:#d9e7ea;font-size:13px;line-height:1.45;margin-top:6px}
+    .project-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}.project-row{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:13px;padding:18px;border-radius:18px;background:rgba(255,255,255,.075);border:1px solid rgba(255,255,255,.1)}.project-row b{display:block;color:white;font-size:clamp(16px,1.5vw,22px);margin-bottom:7px}.project-row p{margin:0;color:#bed2d7;font-size:12px;line-height:1.45}
+    .evidence-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}.evidence-card{grid-column:span 2;position:relative;min-height:175px;padding:20px;border-radius:19px;background:var(--cloud);border:1px solid rgba(11,90,103,.08);display:flex;flex-direction:column;align-items:flex-start}.evidence-card:nth-child(4),.evidence-card:nth-child(5){grid-column:span 3}.evidence-card::before{content:"";width:36px;height:3px;border-radius:3px;background:var(--teal);margin-bottom:14px}.evidence-card:nth-child(even)::before{background:var(--gold)}.evidence-card .tag{font-size:10px;font-weight:850;letter-spacing:.11em;text-transform:uppercase;color:var(--teal);margin-bottom:7px}.evidence-card b{font-size:clamp(16px,1.5vw,22px);color:var(--navy);margin-bottom:8px}.evidence-card p{font-size:12px;line-height:1.42;color:var(--muted);margin:0 0 14px}.evidence-card .project-link{margin-top:auto}
     .ranking{counter-reset:rank;display:grid}.rank{counter-increment:rank;display:grid;grid-template-columns:52px 210px 1fr;gap:18px;align-items:center;padding:18px 0;border-bottom:1px solid #dce7e9}
     .rank::before{content:"0" counter(rank);font-weight:900;color:var(--petrol)}
     .rank b{font-size:18px}.rank span{color:var(--muted);font-size:14px}
@@ -130,10 +138,10 @@
     .thumb:hover,.thumb.active{border-color:var(--gold);transform:translateY(-3px)}.thumb b{font-size:14px}.thumb span{display:block;color:#9eb9c0;margin-top:8px;font-size:11px}
     .offline{position:absolute;left:clamp(28px,5.1vw,78px);bottom:30px;font-size:10px;color:rgba(255,255,255,.55);letter-spacing:.09em;text-transform:uppercase}
     @media(max-width:900px){
-      .slide{padding:82px 28px 80px;overflow-y:auto;align-content:start}.brand{left:28px}.grid-2,.grid-2.equal,.grid-3,.grid-4,.product-grid,.cases{grid-template-columns:1fr}.product-grid{grid-template-columns:repeat(2,1fr)}.product-grid .card{min-height:220px}.hero-cover::before{inset:0;background-position:62% center}.hero-cover::after{background:linear-gradient(90deg,rgba(7,27,43,.98),rgba(7,27,43,.76))}.hero-panel{max-width:100%;margin:34px 0 0}
+      .slide{padding:82px 28px 80px;overflow-y:auto;align-content:start}.brand{left:28px}.grid-2,.grid-2.equal,.grid-3,.grid-4,.product-grid,.portfolio-layout,.project-list{grid-template-columns:1fr}.product-grid{grid-template-columns:repeat(2,1fr)}.product-grid .card{min-height:220px}.hero-cover::before{inset:0;background-position:62% center}.hero-cover::after{background:linear-gradient(90deg,rgba(7,27,43,.98),rgba(7,27,43,.76))}.hero-panel{max-width:100%;margin:34px 0 0}.portfolio-visual{min-height:320px}.evidence-grid{grid-template-columns:1fr 1fr}.evidence-card,.evidence-card:nth-child(4),.evidence-card:nth-child(5){grid-column:auto}
       .flow{grid-template-columns:1fr 1fr}.flow-step::after{display:none}.map{min-height:300px}.overview.open{grid-template-columns:repeat(2,1fr)}.rank{grid-template-columns:38px 150px 1fr}.two-pilots{grid-template-columns:1fr}.plus{display:none}
     }
-    @media(max-width:560px){.product-grid{grid-template-columns:1fr}.overview.open{grid-template-columns:1fr}.controls{right:12px}.counter{left:12px}.rank{grid-template-columns:34px 1fr}.rank span{grid-column:2}.brand{top:18px}.slide{padding-top:66px}}
+    @media(max-width:560px){.product-grid,.evidence-grid{grid-template-columns:1fr}.overview.open{grid-template-columns:1fr}.controls{right:12px}.counter{left:12px}.rank{grid-template-columns:34px 1fr}.rank span{grid-column:2}.brand{top:18px}.slide{padding-top:66px}.price-stats{flex-direction:column;right:auto}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
     @media print{
       html,body{height:auto;overflow:visible;background:white}.slide{position:relative;opacity:1;visibility:visible;transform:none;break-after:page;width:100vw;height:56.25vw;min-height:540px}.chrome,.menu,.help,.overview{display:none!important}.reveal{opacity:1;transform:none}
@@ -150,7 +158,7 @@
         <h1 class="reveal d2">Soluções para governos inteligentes.</h1>
         <p class="lead reveal d3">Dados integrados, modelos analíticos e avaliação para decisões públicas de maior impacto.</p>
       </div>
-      <div class="offline">© LEMA · Todos os direitos reservados.</div>
+      <div class="offline"> © LEMA · Todos os direitos reservados.</div>
     </section>
 
     <section class="slide" data-title="O desafio" data-index="02">
@@ -295,11 +303,19 @@
       <p class="kicker reveal">Eficiência e antecipação</p>
       <h2 class="reveal d1">Do preço de referência ao pulso da economia local.</h2>
       <div class="grid-2 equal">
-        <article class="card gold reveal d2">
-          <p class="card-title">Compras Inteligentes</p>
-          <h3>Referência de mercado em escala.</h3>
-          <ul class="list"><li>Pesquisa automatizada e preço de referência</li><li>Detecção de valores atípicos e dispersão</li><li>Alertas de sobrepreço e compras compartilhadas</li></ul>
-          <div style="display:flex;gap:26px;margin-top:24px"><div class="metric"><strong>200 mil+</strong><span>Preço da Hora PB</span></div><div class="metric"><strong>400 mil+</strong><span>replicação na Bahia</span></div></div>
+        <article class="card price-card reveal d2">
+          <div class="price-visual" role="img" aria-label="Cesta de compras e documentos de contratação conectados por inteligência de preços">
+            <div class="price-stats"><span class="price-stat"><b>200 mil+</b>usuários na Paraíba</span><span class="price-stat"><b>400 mil+</b>usuários na replicação BA</span></div>
+          </div>
+          <div class="price-body">
+            <p class="card-title">Compras Inteligentes</p>
+            <h3>Do preço para o cidadão à referência para o gestor.</h3>
+            <ul class="list"><li>Consulta de preços, lista de compras e custo de vida</li><li>Cotação pública baseada em notas fiscais eletrônicas</li></ul>
+            <div class="cta-row">
+              <a class="project-link" href="https://precodahora.tcepb.tc.br/" target="_blank" rel="noopener">Preço da Hora ↗</a>
+              <a class="project-link" href="https://precodereferencia.tce.pb.gov.br/" target="_blank" rel="noopener">Preço de Referência ↗</a>
+            </div>
+          </div>
         </article>
         <article class="card reveal d3">
           <p class="card-title">Pulso Econômico</p>
@@ -339,21 +355,38 @@
       </div>
     </section>
 
-    <section class="slide" data-title="Capacidade comprovada" data-index="12">
+    <section class="slide dark portfolio-slide" data-title="Plataformas em operação" data-index="12">
       <div class="brand">LEMA · UFPB</div>
       <p class="kicker reveal">Experiência aplicada</p>
-      <h2 class="reveal d1">Capacidade comprovada em problemas públicos complexos.</h2>
-      <div class="cases reveal d2">
-        <div class="case"><b>Inteligência fiscal · SEFAZ-PB</b><span>Gap tributário, programação fiscal, previsão e modelos explicáveis.</span></div>
-        <div class="case"><b>Preços públicos · PB e BA</b><span>Preço da Hora, Preço de Referência e infraestrutura fiscal.</span></div>
-        <div class="case"><b>Educação · João Pessoa</b><span>Sistema municipal de avaliação e evidências para o planejamento.</span></div>
-        <div class="case"><b>Desenvolvimento · SECTIES-PB</b><span>Ciência, tecnologia, ensino superior, cursos e pesquisadores.</span></div>
-        <div class="case"><b>Equidade · Governo Federal</b><span>ODS por raça/cor e ODS 18 em plataforma pública integrada.</span></div>
-        <div class="case"><b>Saúde · APS municipal</b><span>Força de trabalho, financiamento, oferta e indicadores replicáveis.</span></div>
+      <h2 class="reveal d1">Soluções públicas que já saíram do projeto e chegaram ao usuário.</h2>
+      <div class="portfolio-layout reveal d2">
+        <figure class="portfolio-visual">
+          <img src="assets/ecossistema-plataformas.jpg" alt="Ecossistema integrado de plataformas de dados públicos">
+          <figcaption><strong>Soluções de Excelência</strong><span>Do consumo cotidiano à auditoria, da equidade racial à ciência, tecnologia e educação.</span></figcaption>
+        </figure>
+        <div class="project-list">
+          <article class="project-row"><div><b>Preço da Hora</b><p>Consulta de preços para o cidadão, lista de compras e monitoramento do custo de vida.</p></div><a class="project-link light" href="https://precodahora.tcepb.tc.br/" target="_blank" rel="noopener">Explorar ↗</a></article>
+          <article class="project-row"><div><b>Preço de Referência</b><p>Cotação para compras públicas com valores observados em documentos fiscais eletrônicos.</p></div><a class="project-link light" href="https://precodereferencia.tce.pb.gov.br/" target="_blank" rel="noopener">Explorar ↗</a></article>
+          <article class="project-row"><div><b>Plataforma ODS Racial</b><p>Mais de 90 indicadores para diagnóstico territorial das desigualdades étnico-raciais.</p></div><a class="project-link light" href="https://odsr.lema.ufpb.br/" target="_blank" rel="noopener">Explorar ↗</a></article>
+          <article class="project-row"><div><b>Plataforma ODS-PB</b><p>146 indicadores dos ODS e Índice de Desenvolvimento Sustentável dos municípios paraibanos.</p></div><a class="project-link light" href="https://odspb.secties.pb.gov.br/" target="_blank" rel="noopener">Explorar ↗</a></article>
+        </div>
       </div>
     </section>
 
-    <section class="slide" data-title="Modelo de parceria" data-index="13">
+    <section class="slide evidence-slide" data-title="Portfólio aplicado" data-index="13">
+      <div class="brand">LEMA · UFPB</div>
+      <p class="kicker reveal">Capacidade comprovada</p>
+      <h2 class="reveal d1">Um mesmo núcleo analítico, diferentes missões públicas.</h2>
+      <div class="evidence-grid reveal d2">
+        <article class="evidence-card"><span class="tag">Ciência, tecnologia e inovação</span><b>SIDTEC</b><p>Informação e decisão estratégica para o ecossistema de CT&amp;I da Paraíba.</p><a class="project-link" href="https://sidtec.secties.pb.gov.br/" target="_blank" rel="noopener">Explorar ↗</a></article>
+        <article class="evidence-card"><span class="tag">Educação</span><b>SAEGO</b><p>Monitoramento da trajetória de egressos do ensino superior e técnico-tecnológico.</p><a class="project-link" href="https://lema.ufpb.br/saego/" target="_blank" rel="noopener">Explorar ↗</a></article>
+        <article class="evidence-card"><span class="tag">Controle externo</span><b>IDGPB</b><p>Indicadores de Educação e Saúde para apoiar auditorias de contas públicas.</p><a class="project-link" href="https://idgpb.tce.pb.gov.br/" target="_blank" rel="noopener">Explorar ↗</a></article>
+        <article class="evidence-card"><span class="tag">Integridade das compras</span><b>Painel de Licitações</b><p>Análise de processos licitatórios com indicadores de risco de potencial conluio.</p><span class="project-link disabled">Não disponível</span></article>
+        <article class="evidence-card"><span class="tag">Saúde e compras públicas</span><b>PCM · Medicamentos</b><p>Riscos de vencimento e omissão de lote na aquisição pública de medicamentos.</p><span class="project-link disabled">Não disponível</span></article>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Modelo de parceria" data-index="14">
       <div class="brand">LEMA · UFPB</div>
       <p class="kicker reveal">Parceria estratégica</p>
       <h2 class="reveal d1">Fechar o ciclo entre recurso e resultado.</h2>
@@ -364,7 +397,7 @@
       <p class="claim reveal d4" style="text-align:center;margin-top:28px;color:var(--petrol)">Projetos mais financiáveis · execução sólida · impacto demonstrável</p>
     </section>
 
-    <section class="slide" data-title="Prioridades comerciais" data-index="14">
+    <section class="slide" data-title="Prioridades comerciais" data-index="15">
       <div class="brand">LEMA · UFPB</div>
       <p class="kicker reveal">Entrada no mercado</p>
       <h2 class="reveal d1">Cinco ofertas para abrir portas.</h2>
@@ -377,7 +410,7 @@
       </div>
     </section>
 
-    <section class="slide" data-title="Encerramento" data-index="15">
+    <section class="slide" data-title="Encerramento" data-index="16">
       <div class="brand">LEMA · UFPB</div>
       <div class="quote">
         <div class="accent-line reveal" style="margin-inline:auto"></div>
@@ -391,7 +424,7 @@
       </div>
     </section>
 
-    <section class="slide" data-title="Referências" data-index="16">
+    <section class="slide" data-title="Referências" data-index="17">
       <div class="brand">LEMA · UFPB</div>
       <p class="kicker">Referências institucionais</p>
       <h2>Fontes e marcos regulatórios.</h2>
@@ -399,6 +432,7 @@
         <div><b>Pesquisas eleitorais</b>Tribunal Superior Eleitoral. Resolução nº 23.747, de 26 de fevereiro de 2026; orientações para as Eleições 2026.</div>
         <div><b>Proteção de dados</b>Autoridade Nacional de Proteção de Dados. Guia orientativo: tratamento de dados pessoais pelo Poder Público.</div>
         <div><b>Contratações públicas</b>Brasil. Lei nº 14.133, de 1º de abril de 2021.</div>
+        <div><b>Plataformas demonstradas</b>Endereços institucionais ativos indicados nos botões “Explorar”. O ODS Racial está disponível em odsr.lema.ufpb.br.</div>
         <div><b>Observação</b>Pesquisa eleitoral constitui linha comercial separada do portfólio governamental e exige governança e compliance próprios.</div>
       </div>
     </section>
@@ -420,7 +454,7 @@
 
   <div class="chrome">
     <div class="progress"><i id="progress"></i></div>
-    <div class="counter" id="counter">01 / 16</div>
+    <div class="counter" id="counter">01 / 17</div>
     <div class="controls">
       <button class="control" id="prev" aria-label="Slide anterior">←</button>
       <button class="control" id="menuBtn" aria-label="Abrir menu">☰</button>
