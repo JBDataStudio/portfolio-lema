@@ -93,6 +93,9 @@
     .pin{position:absolute;width:18px;height:18px;border-radius:50%;background:var(--gold);border:4px solid var(--white);box-shadow:0 0 0 9px rgba(217,171,75,.18);animation:pulse 2.4s ease-in-out infinite}
     .pin:nth-child(2){left:31%;top:28%;background:var(--teal);animation-delay:.5s}.pin:nth-child(3){left:66%;top:56%;animation-delay:1s}.pin:nth-child(4){left:78%;top:26%;background:#fff;animation-delay:1.4s}
     @keyframes pulse{50%{transform:scale(1.18);box-shadow:0 0 0 16px rgba(217,171,75,0)}}
+    .health-slide{background:var(--navy);isolation:isolate}.health-slide::before{content:"";position:absolute;z-index:-2;inset:0 0 0 34%;background:url("assets/saude-inteligente.jpg") center/cover no-repeat}.health-slide::after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,var(--navy) 0%,rgba(7,27,43,.98) 33%,rgba(7,27,43,.80) 52%,rgba(7,27,43,.22) 100%),linear-gradient(0deg,rgba(7,27,43,.82),transparent 55%)}
+    .health-content{max-width:min(920px,63vw)}.health-slide h2{font-size:clamp(34px,4.4vw,65px);max-width:920px;margin-bottom:20px}.health-data{max-width:820px;color:#c8dadd;font-size:clamp(13px,1.2vw,18px);line-height:1.52;margin:0}.health-data b{color:var(--gold)}
+    .health-outcomes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:38px;max-width:1180px}.health-outcome{padding-top:16px;border-top:2px solid rgba(21,148,147,.74)}.health-outcome:nth-child(2){border-color:var(--gold)}.health-outcome b{display:block;color:white;font-size:clamp(17px,1.65vw,24px);margin-bottom:7px}.health-outcome span{display:block;color:#bed1d5;font-size:clamp(11px,1vw,15px);line-height:1.42}
     .price-card{padding:0;overflow:hidden}.price-visual{position:relative;height:clamp(126px,17vh,178px);background:url("assets/inteligencia-precos.jpg") center 54%/cover no-repeat}
     .price-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,27,43,.72),transparent 70%)}
     .price-stats{position:absolute;z-index:1;left:22px;right:22px;bottom:16px;display:flex;gap:10px}.price-stat{padding:8px 12px;border:1px solid rgba(255,255,255,.18);border-radius:12px;background:rgba(7,27,43,.76);backdrop-filter:blur(8px);color:white;font-size:10px;line-height:1.15}
@@ -138,7 +141,7 @@
     .thumb:hover,.thumb.active{border-color:var(--gold);transform:translateY(-3px)}.thumb b{font-size:14px}.thumb span{display:block;color:#9eb9c0;margin-top:8px;font-size:11px}
     .offline{position:absolute;left:clamp(28px,5.1vw,78px);bottom:30px;font-size:10px;color:rgba(255,255,255,.55);letter-spacing:.09em;text-transform:uppercase}
     @media(max-width:900px){
-      .slide{padding:82px 28px 80px;overflow-y:auto;align-content:start}.brand{left:28px}.grid-2,.grid-2.equal,.grid-3,.grid-4,.product-grid,.portfolio-layout,.project-list{grid-template-columns:1fr}.product-grid{grid-template-columns:repeat(2,1fr)}.product-grid .card{min-height:220px}.hero-cover::before{inset:0;background-position:62% center}.hero-cover::after{background:linear-gradient(90deg,rgba(7,27,43,.98),rgba(7,27,43,.76))}.hero-panel{max-width:100%;margin:34px 0 0}.portfolio-visual{min-height:320px}.evidence-grid{grid-template-columns:1fr 1fr}.evidence-card,.evidence-card:nth-child(4),.evidence-card:nth-child(5){grid-column:auto}
+      .slide{padding:82px 28px 80px;overflow-y:auto;align-content:start}.brand{left:28px}.grid-2,.grid-2.equal,.grid-3,.grid-4,.product-grid,.portfolio-layout,.project-list,.health-outcomes{grid-template-columns:1fr}.product-grid{grid-template-columns:repeat(2,1fr)}.product-grid .card{min-height:220px}.hero-cover::before{inset:0;background-position:62% center}.hero-cover::after{background:linear-gradient(90deg,rgba(7,27,43,.98),rgba(7,27,43,.76))}.hero-panel{max-width:100%;margin:34px 0 0}.health-slide::before{inset:0;background-position:68% center}.health-slide::after{background:linear-gradient(90deg,rgba(7,27,43,.98),rgba(7,27,43,.72))}.health-content{max-width:100%}.health-outcomes{gap:16px}.portfolio-visual{min-height:320px}.evidence-grid{grid-template-columns:1fr 1fr}.evidence-card,.evidence-card:nth-child(4),.evidence-card:nth-child(5){grid-column:auto}
       .flow{grid-template-columns:1fr 1fr}.flow-step::after{display:none}.map{min-height:300px}.overview.open{grid-template-columns:repeat(2,1fr)}.rank{grid-template-columns:38px 150px 1fr}.two-pilots{grid-template-columns:1fr}.plus{display:none}
     }
     @media(max-width:560px){.product-grid,.evidence-grid{grid-template-columns:1fr}.overview.open{grid-template-columns:1fr}.controls{right:12px}.counter{left:12px}.rank{grid-template-columns:34px 1fr}.rank span{grid-column:2}.brand{top:18px}.slide{padding-top:66px}.price-stats{flex-direction:column;right:auto}}
@@ -158,7 +161,7 @@
         <h1 class="reveal d2">Soluções para governos inteligentes.</h1>
         <p class="lead reveal d3">Dados integrados, modelos analíticos e avaliação para decisões públicas de maior impacto.</p>
       </div>
-      <div class="offline"> © LEMA · Todos os direitos reservados.</div>
+      <div class="offline">Apresentação interativa · funciona offline</div>
     </section>
 
     <section class="slide" data-title="O desafio" data-index="02">
@@ -232,6 +235,7 @@
             <div class="metric"><strong>600</strong><span>maior capacidade de segmentação</span></div>
             <div class="metric"><strong>1.000+</strong><span>grandes centros e recortes territoriais</span></div>
           </div>
+          <p class="small" style="margin:22px 0 0">Projetos básicos a partir de R$ 14 mil; intermediários em torno de R$ 25 mil; grandes levantamentos sob dimensionamento.</p>
         </div>
       </div>
     </section>
@@ -333,18 +337,26 @@
           <h2 class="reveal d1">ODIN Municipal</h2>
           <p class="claim reveal d2">Rua, bairro, distrito e região conectados a serviços, indicadores e decisões.</p>
           <p class="lead reveal d3">Saúde · educação · assistência · infraestrutura · economia · arrecadação · meio ambiente.</p>
-
-           <div class="cta-row">
-              <a class="project-link" href="https://odin-client-kappa.vercel.app/" target="_blank" rel="noopener">Protótipo ODIN ↗</a>
-            </div>
         </div>
-        
-
         <div class="map reveal d3" aria-label="Representação abstrata de um mapa territorial com pontos de atenção"><span class="pin"></span><span class="pin"></span><span class="pin"></span><span class="pin"></span></div>
       </div>
     </section>
 
-    <section class="slide" data-title="Sala de Decisão" data-index="11">
+    <section class="slide dark health-slide" data-title="Saúde Inteligente" data-index="11">
+      <div class="brand">LEMA · UFPB</div>
+      <div class="health-content">
+        <p class="kicker reveal">Saúde inteligente</p>
+        <h2 class="reveal d1">Conectar a trajetória do paciente à rede pode antecipar riscos e salvar vidas.</h2>
+        <p class="health-data reveal d2"><b>Integração longitudinal e territorial:</b> internações, atendimentos ambulatoriais, óbitos, nascimentos, profissionais, estabelecimentos, prontuários eletrônicos e registros administrativos estaduais.</p>
+      </div>
+      <div class="health-outcomes reveal d3">
+        <div class="health-outcome"><b>Antecipar riscos</b><span>Detectar reincidências, agravamentos, eventos evitáveis e grupos mais vulneráveis.</span></div>
+        <div class="health-outcome"><b>Coordenar o cuidado</b><span>Reconstruir o percurso entre atenção primária, ambulatório e hospital — com segurança e governança.</span></div>
+        <div class="health-outcome"><b>Priorizar recursos</b><span>Identificar áreas críticas, gargalos da rede e onde equipes, leitos e serviços produzem maior impacto.</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Sala de Decisão" data-index="12">
       <div class="brand">LEMA · UFPB</div>
       <div class="grid-2">
         <div>
@@ -360,14 +372,14 @@
       </div>
     </section>
 
-    <section class="slide dark portfolio-slide" data-title="Plataformas em operação" data-index="12">
+    <section class="slide dark portfolio-slide" data-title="Plataformas em operação" data-index="13">
       <div class="brand">LEMA · UFPB</div>
       <p class="kicker reveal">Experiência aplicada</p>
       <h2 class="reveal d1">Soluções públicas que já saíram do projeto e chegaram ao usuário.</h2>
       <div class="portfolio-layout reveal d2">
         <figure class="portfolio-visual">
           <img src="assets/ecossistema-plataformas.jpg" alt="Ecossistema integrado de plataformas de dados públicos">
-          <figcaption><strong>Soluções de Excelência</strong><span>Do consumo cotidiano à auditoria, da equidade racial à ciência, tecnologia e educação.</span></figcaption>
+          <figcaption><strong>9 soluções aplicadas</strong><span>Do consumo cotidiano à auditoria, da equidade racial à ciência, tecnologia e educação.</span></figcaption>
         </figure>
         <div class="project-list">
           <article class="project-row"><div><b>Preço da Hora</b><p>Consulta de preços para o cidadão, lista de compras e monitoramento do custo de vida.</p></div><a class="project-link light" href="https://precodahora.tcepb.tc.br/" target="_blank" rel="noopener">Explorar ↗</a></article>
@@ -378,7 +390,7 @@
       </div>
     </section>
 
-    <section class="slide evidence-slide" data-title="Portfólio aplicado" data-index="13">
+    <section class="slide evidence-slide" data-title="Portfólio aplicado" data-index="14">
       <div class="brand">LEMA · UFPB</div>
       <p class="kicker reveal">Capacidade comprovada</p>
       <h2 class="reveal d1">Um mesmo núcleo analítico, diferentes missões públicas.</h2>
@@ -391,7 +403,7 @@
       </div>
     </section>
 
-    <section class="slide" data-title="Modelo de parceria" data-index="14">
+    <section class="slide" data-title="Modelo de parceria" data-index="15">
       <div class="brand">LEMA · UFPB</div>
       <p class="kicker reveal">Parceria estratégica</p>
       <h2 class="reveal d1">Fechar o ciclo entre recurso e resultado.</h2>
@@ -402,21 +414,20 @@
       <p class="claim reveal d4" style="text-align:center;margin-top:28px;color:var(--petrol)">Projetos mais financiáveis · execução sólida · impacto demonstrável</p>
     </section>
 
-    <section class="slide" data-title="Possibilidades" data-index="15">
+    <section class="slide" data-title="Prioridades comerciais" data-index="16">
       <div class="brand">LEMA · UFPB</div>
-      <p class="kicker reveal">Possibilidades</p>
-      <h2 class="reveal d1">Cinco eixos de produtos.</h2>
+      <p class="kicker reveal">Entrada no mercado</p>
+      <h2 class="reveal d1">Cinco ofertas para abrir portas.</h2>
       <div class="ranking reveal d2">
         <div class="rank"><b>Receita 360</b><span>Retorno financeiro mensurável e experiência comprovada.</span></div>
+        <div class="rank"><b>Saúde Inteligente</b><span>Alto impacto social, integração de dados e planejamento da rede assistencial.</span></div>
         <div class="rank"><b>Pulso Municipal</b><span>Entrada rápida, custo acessível e alta recorrência.</span></div>
         <div class="rank"><b>ODIN Municipal</b><span>Plataforma estruturante e vínculo continuado.</span></div>
         <div class="rank"><b>Avalia Município</b><span>Necessidade permanente e ciclo anual.</span></div>
-        <div class="rank"><b>Pulso Econômico</b><span>Diferencial inovador para planejamento e receita.</span></div>
       </div>
-      <p class="small" style="margin:22px 0 0">Outros projetos: Inteligência Eleitoral, Pesquisas de Intenção de Voto</p>
     </section>
 
-    <section class="slide" data-title="Encerramento" data-index="16">
+    <section class="slide" data-title="Encerramento" data-index="17">
       <div class="brand">LEMA · UFPB</div>
       <div class="quote">
         <div class="accent-line reveal" style="margin-inline:auto"></div>
@@ -430,13 +441,14 @@
       </div>
     </section>
 
-    <section class="slide" data-title="Referências" data-index="17">
+    <section class="slide" data-title="Referências" data-index="18">
       <div class="brand">LEMA · UFPB</div>
       <p class="kicker">Referências institucionais</p>
       <h2>Fontes e marcos regulatórios.</h2>
       <div class="source-list">
         <div><b>Pesquisas eleitorais</b>Tribunal Superior Eleitoral. Resolução nº 23.747, de 26 de fevereiro de 2026; orientações para as Eleições 2026.</div>
         <div><b>Proteção de dados</b>Autoridade Nacional de Proteção de Dados. Guia orientativo: tratamento de dados pessoais pelo Poder Público.</div>
+        <div><b>Saúde digital</b>Ministério da Saúde. DATASUS, Informações de Saúde/TABNET e Ecossistema e-SUS APS.</div>
         <div><b>Contratações públicas</b>Brasil. Lei nº 14.133, de 1º de abril de 2021.</div>
         <div><b>Plataformas demonstradas</b>Endereços institucionais ativos indicados nos botões “Explorar”. O ODS Racial está disponível em odsr.lema.ufpb.br.</div>
         <div><b>Observação</b>Pesquisa eleitoral constitui linha comercial separada do portfólio governamental e exige governança e compliance próprios.</div>
@@ -460,7 +472,7 @@
 
   <div class="chrome">
     <div class="progress"><i id="progress"></i></div>
-    <div class="counter" id="counter">01 / 17</div>
+    <div class="counter" id="counter">01 / 18</div>
     <div class="controls">
       <button class="control" id="prev" aria-label="Slide anterior">←</button>
       <button class="control" id="menuBtn" aria-label="Abrir menu">☰</button>
